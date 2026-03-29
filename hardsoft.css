@@ -171,6 +171,26 @@ body {
     padding: 10px;
     border-radius: 20px;
     cursor: pointer;
+    font-weight: bold;
+
+}
+
+.login-links {
+    color: var(--ciano-tech);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+
+}
+
+.login-links a {
+    transition: 0.2s;
+}
+
+.login-links:hover {
+    text-decoration: underline;
+    color: #ff4d4d;
 }
 
 /* FECHAR */
