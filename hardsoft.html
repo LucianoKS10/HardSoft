@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HardSoft</title>
+
+    <link rel="icon" type="image/x-icon" href="img/icone2.png">
     <link rel="stylesheet" href="hardsoft.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -25,7 +25,7 @@
                 <a href="#">Página Inicial</a>
                 <a href="#">Atendimento</a>
                 <a href="#">Departamentos</a>
-                <a href="#">Acessibiilidade</a>
+                <a href="#">Acessibilidade</a>
             </div>
 
             <div class="search">
@@ -53,8 +53,7 @@
             <a href="#" class="arrow">›</a>
         </div>
         <div class="products-grid">
-
-            <div class="card">
+            <div class="product-card">
                 <img
                     src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3EGBeILI1EgX0ujul30O3KK0U01wY_-wZ4YvE0y4MLSDOrMFZSHhktdccmd93xpmO9U48SeEqKbfxUSus0saufC4fELWxNZV0JTSmSFFBgj9SYmbL6kiEyw">
                 <h3>RTX 5070</h3>
@@ -62,7 +61,7 @@
                 <button>Comprar</button>
             </div>
 
-            <div class="card">
+            <div class="product-card">
                 <img
                     src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGBBUuayAH1jMdwHp3b3-eo3YYTL9D-ev-X7OKv-legn2txHfm0RTgJ8ThmsaQsbHQtO76WoEsUy5-rVdeC2R3BArXyJX42juoG15S">
                 <h3>Processador AMD Ryzen 7 7800X3D</h3>
@@ -70,7 +69,7 @@
                 <button>Comprar</button>
             </div>
 
-            <div class="card">
+            <div class="product-card">
                 <img
                     src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSfhS4lPxil7aEVvs2aRhOyuACYvRLXg5hD9-jRQoBV1pAPLCfzQ0MlO7G8UCDlSbH6_smepRKnJpoUNJsUl9jwy6rj2iaVHMk3TszwkTa16o-eIXD-LfMv">
                 <h3>Memória RAM XPG Lancer Blade 16GB RGB DDR5</h3>
@@ -78,27 +77,6 @@
                 <button>Comprar</button>
             </div>
 
-            <div class="card">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSfhS4lPxil7aEVvs2aRhOyuACYvRLXg5hD9-jRQoBV1pAPLCfzQ0MlO7G8UCDlSbH6_smepRKnJpoUNJsUl9jwy6rj2iaVHMk3TszwkTa16o-eIXD-LfMv">
-                <h3>Memória RAM XPG Lancer Blade 16GB RGB DDR5</h3>
-                <p>R$ <del>1.580,90</del> 1.180,90</p>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSfhS4lPxil7aEVvs2aRhOyuACYvRLXg5hD9-jRQoBV1pAPLCfzQ0MlO7G8UCDlSbH6_smepRKnJpoUNJsUl9jwy6rj2iaVHMk3TszwkTa16o-eIXD-LfMv">
-                <h3>Memória RAM XPG Lancer Blade 16GB RGB DDR5</h3>
-                <p>R$ <del>1.580,90</del> 1.180,90</p>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSfhS4lPxil7aEVvs2aRhOyuACYvRLXg5hD9-jRQoBV1pAPLCfzQ0MlO7G8UCDlSbH6_smepRKnJpoUNJsUl9jwy6rj2iaVHMk3TszwkTa16o-eIXD-LfMv">
-                <h3>Memória RAM XPG Lancer Blade 16GB RGB DDR5</h3>
-                <p>R$ <del>1.580,90</del> 1.180,90</p>
-                <button>Comprar</button>
-            </div>
 
         </div>
     </section>
@@ -109,7 +87,6 @@
             <h2 class="section-title">Componentes</h2>
             <a href="#" class="arrow">›</a>
         </div>
-
         <div class="products-grid"></div>
     </section>
 
@@ -119,7 +96,6 @@
             <h2 class="section-title">Periféricos</h2>
             <a href="#" class="arrow">›</a>
         </div>
-
         <div class="products-grid"></div>
     </section>
 
@@ -129,35 +105,60 @@
             <h2 class="section-title">Acessórios</h2>
             <a href="#" class="arrow">›</a>
         </div>
-
         <div class="products-grid"></div>
     </section>
 
-    <!-- PCS -->
+    <!-- PCS E NOTEBOOKS -->
     <section class="pcs-notebooks">
         <div class="section-header">
             <h2 class="section-title">PCs e Notebooks</h2>
             <a href="#" class="arrow">›</a>
         </div>
-
         <div class="products-grid"></div>
     </section>
-
 
     <!-- MODAL DE LOGIN -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
-            <span class="close">&times;</span>
 
-            <h2>Login</h2>
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Senha">
-
-            <div class="login-links">
-                <a href="#">Cadastrar-se</a>
-                <a href="#">Esqueceu a senha?</a>
+            <!-- HEADER DO MODAL -->
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="loginTitle">Login</h2>
             </div>
-            <button>Entrar</button>
+
+            <!-- LOGIN -->
+            <div class="form login-form">
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <div class="login-links">
+                    <a href="#" id="irRegister">Cadastrar-se</a>
+                    <a href="#" id="goForgot">Esqueceu a senha?</a>
+                </div>
+                <button>Entrar</button>
+            </div>
+
+            <!-- CADASTRO -->
+            <div class="form register-form" style="display: none;">
+                <input type="text" placeholder="Nome Completo">
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <input type="password" placeholder="Confirmar Senha">
+                <div class="login-links">
+                    <a href="#" id="goLogin">Já tenho uma conta</a>
+                </div>
+                <button>Cadastrar</button>
+            </div>
+
+            <!-- ESQUECEU A SENHA -->
+            <div class="form forgot-form" style="display: none;">
+                <input type="text" placeholder="Digite seu email">
+                <div class="login-links">
+                    <a href="#" id="backLogin">Voltar ao login</a>
+                </div>
+                <button>Recuperar senha</button>
+            </div>
+
         </div>
     </div>
 
