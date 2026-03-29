@@ -1,0 +1,356 @@
+:root {
+    --azul-principal: #032490;
+    --azul-hover: #3b82f6;
+    --ciano-tech: #00d4ff;
+    --fundo: #f4f7fb;
+    --texto: #111827;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    background-color: var(--fundo);
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    /* 🔥 ESSENCIAL */
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    backdrop-filter: blur(10px);
+
+    background: rgba(3, 36, 144, 0.8);
+    border-bottom: 2px solid black;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CENTRO */
+.nav-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    flex: 1;
+}
+
+/* LINKS */
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--ciano-tech);
+}
+
+/* LINHA ANIMADA DA NAVBAR*/
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1.5px;
+
+    opacity: 0;
+    background: #00d4ff;
+    box-shadow: 0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    left: 0;
+    bottom: -4px;
+
+    transition: width 0.5s ease, opacity 0.5s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* LOGO */
+.logo img {
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
+
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.09);
+}
+
+/* LOGIN */
+.login {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* BOTÃO LOGIN */
+.login a {
+    background: var(--ciano-tech);
+    color: black;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 25px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* FUNDO ESCURO */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* CAIXA DO LOGIN */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    animation: aparecer 0.3s ease;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* INPUTS */
+.modal-content input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* BOTÃO */
+.modal-content button {
+    background: var(--ciano-tech);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* FECHAR */
+.close {
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.login a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* BARRA DE PESQUISA */
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    width: clamp(200px, 50vw, 700px);
+    max-width: 700px;
+
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+
+    background: #d1d8e9;
+    color: var(--texto);
+
+    box-shadow: 0 0 0 1px #1e293b;
+
+    transition: all 0.3s ease;
+}
+
+.search input:focus {
+    box-shadow: 0 0 10px var(--ciano-tech);
+}
+
+@media (max-width: 600px) {
+    .nav-center {
+        align-items: center;
+    }
+}
+
+/* --- LINHAS DE PRODUTOS */
+
+/*BANNER*/
+.hero {
+    background: linear-gradient(135deg, #032490, #00d4ff);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hero button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.08);
+}
+
+
+/* --- ORGANIZAÇÃO DAS SEÇÕES --- */
+
+section {
+    margin-bottom: 40px;
+}
+
+/* CONTAINER DAS SEÇÕES */
+.best-sellers,
+.components,
+.peripherals,
+.accessories,
+.pcs-notebooks {
+    padding: 30px;
+    background: var(--azul-principal);
+    color: white;
+}
+
+/* GRID DE PRODUTOS */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+/* AJUSTE DOS TÍTULOS DENTRO DAS SEÇÕES */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+
+    transition: 0.3s;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.arrow:hover {
+    transform: translateX(5px);
+    color: var(--ciano-tech);
+}
+
+/* CARD DE PRODUTOS */
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+
+    text-align: center;
+    color: var(--texto);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.card button {
+    background: var(--ciano-tech);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #00aacc;
+    transform: scale(1.07);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
