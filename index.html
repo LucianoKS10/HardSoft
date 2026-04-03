@@ -22,7 +22,7 @@
 
         <div class="nav-center">
             <div class="links">
-                <a href="#">Página Inicial</a>
+                <a href="index.html">Página Inicial</a>
                 <a href="#">Atendimento</a>
                 <a href="#">Departamentos</a>
                 <a href="#">Acessibilidade</a>
@@ -34,6 +34,11 @@
                     <input type="text" placeholder="Pesquisar produtos..." id="searchInput">
                     <button type="submit" id="searchBtn">🔍</button>
                 </form>
+
+                <div id="searchResults"></div>
+                <p id="noResults" style="display: none; color: white;">
+                    Nenhum produto encontrado 😢
+                </p>
             </div>
         </div>
 
@@ -91,7 +96,16 @@
             <h2 class="section-title">Componentes</h2>
             <a href="#" class="arrow">›</a>
         </div>
-        <div class="products-grid"></div>
+        <div class="products-grid">
+            <div class="product-card">
+                <img
+                    src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3EGBeILI1EgX0ujul30O3KK0U01wY_-wZ4YvE0y4MLSDOrMFZSHhktdccmd93xpmO9U48SeEqKbfxUSus0saufC4fELWxNZV0JTSmSFFBgj9SYmbL6kiEyw">
+                <h3>RTX 5070</h3>
+                <p>R$ 4.504,99</p>
+                <button>Comprar</button>
+            </div>
+
+        </div>
     </section>
 
     <!-- PERIFÉRICOS -->

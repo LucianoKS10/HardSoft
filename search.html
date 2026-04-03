@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Busca - HardSoft</title>
+
+    <link rel="icon" type="image/x-icon" href="img/icone2.png">
+    <link rel="stylesheet" href="hardsoft.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (igual à principal) -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo da HardSoft">
+        </div>
+
+        <div class="nav-center">
+            <div class="links">
+                <a href="index.html">Página Inicial</a>
+                <a href="#">Atendimento</a>
+                <a href="#">Departamentos</a>
+                <a href="#">Acessibilidade</a>
+            </div>
+
+            <!-- BARRA DE PESQUISA -->
+            <div class="search">
+                <form id="searchForm">
+                    <input type="text" placeholder="Pesquisar produtos..." id="searchInput">
+                    <button type="submit" id="searchBtn">🔍</button>
+                </form>
+
+                <div id="searchResults"></div>
+                <p id="noResults" style="display: none; color: white;">
+                    Nenhum produto encontrado 😢
+                </p>
+            </div>
+        </div>
+
+        <div class="login">
+            <a href="#">Login</a>
+        </div>
+
+    </nav>
+
+    <!-- RESULTADOS -->
+    <section class="results-page">
+
+        <div class="section-header">
+            <h2 id="resultsTitle">Resultados da busca:</h2>
+        </div>
+
+        <div id="resultsPage" class="products-grid"></div>
+
+        <p id="noResultsPage" style="display: none; text-align: center; margin-top: 20px;">
+            Nenhum produto encontrado 😢
+        </p>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <div class="related-links">
+            <h3>🔥 Links Relacionados</h3>
+            <div class="links-container">
+                <a href="#">Promoções</a>
+                <a href="#">Hardware</a>
+                <a href="#">Ofertas</a>
+            </div>
+        </div>
+
+        <img src="img/logo.png" alt="Logo da HardSoft">
+
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre a HardSoft</h3>
+                <p>Loja especializada em hardware e tecnologia.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Email: contato@hardsoft.com</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="search.js"></script>
+
+</body>
+
+</html>
