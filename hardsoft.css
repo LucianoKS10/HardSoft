@@ -91,6 +91,30 @@ body {
     opacity: 1;
 }
 
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-center {
+        width: 100%;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .login {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* LOGO */
 .logo img {
     height: 60px;
@@ -245,36 +269,83 @@ body {
     color: white;
 }
 
-/* BARRA DE PESQUISA */
 .search {
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-.search input {
+#searchForm {
+
+    display: flex;
     width: clamp(200px, 50vw, 700px);
-    max-width: 700px;
 
-    padding: 10px 20px;
-    border-radius: 30px;
+
+    transition: all 0.4s ease;
+
+}
+
+#searchForm:hover {
+    transform: scale(1.02);
+}
+
+/* INPUT */
+#searchInput {
+    flex: 1;
+    padding: 10px 15px;
+
     border: none;
+    outline: none;
 
+    border-radius: 30px 0 0 30px;
     background: #d1d8e9;
     color: var(--texto);
 
     box-shadow: 0 0 0 1px #1e293b;
-
-    transition: all 0.3s ease;
 }
 
-.search input:focus {
+/* BOTÃO */
+#searchBtn {
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 0 30px 30px 0;
+
+    background: #d1d8e9;
+    color: #1e293b;
+
+    box-shadow: 0 0 0 1px #1e293b;
+    border-left: none;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+#searchBtn:hover {
+    background: #c7d0e5;
+    transform: scale(1.08);
+
+
+}
+
+#searchForm:focus-within #searchInput,
+#searchForm:focus-within #searchBtn {
     box-shadow: 0 0 10px var(--ciano-tech);
 }
 
-@media (max-width: 600px) {
-    .nav-center {
-        align-items: center;
+@media (max-width: 500px) {
+
+    #searchForm {
+        width: 100%;
+    }
+
+    #searchInput {
+        font-size: 14px;
+    }
+
+    #searchBtn {
+        padding: 10px;
     }
 }
 
@@ -307,6 +378,25 @@ body {
     transform: scale(1.08);
 }
 
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero button {
+        padding: 10px 20px;
+    }
+}
+
 
 /* --- ORGANIZAÇÃO DAS SEÇÕES --- */
 
@@ -328,8 +418,8 @@ section {
 /* GRID DE PRODUTOS */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 /* AJUSTE DOS TÍTULOS DENTRO DAS SEÇÕES */
@@ -394,4 +484,98 @@ section {
     width: 100%;
     height: 180px;
     object-fit: contain;
+}
+
+@media (max-width: 500px) {
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 140px;
+    }
+
+    .product-card h3 {
+        font-size: 14px;
+    }
+
+    .product-card p {
+        font-size: 13px;
+    }
+}
+
+.footer {
+    background: #0f172a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer img {
+    height: 60px;
+    margin: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #cbd5f5;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* CONTAINER GERAL */
+.related-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+/* LINKS EM LINHA */
+.links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ESTILO DOS LINKS */
+.links-container a {
+    color: var(--ciano-tech);
+    text-decoration: none;
+    font-size: 14px;
+
+    background-color: #344259;
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.links-container a:hover {
+    background-color: var(--ciano-tech);
+    color: black;
+    transform: translateY(-2px);
 }

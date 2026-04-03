@@ -115,3 +115,4 @@ window.addEventListener("scroll", () => {
         navbar.style.background = "rgba(3, 36, 144, 0.8)";
     }
 });
+
