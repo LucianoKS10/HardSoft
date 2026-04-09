@@ -106,12 +106,14 @@ body {
         padding: 15px;
     }
 
-    /* 🔥 JOGA LOGIN + CARRINHO PRA CIMA */
     .nav-right {
         order: -1;
-        /* sobe pro topo */
         display: flex;
+        flex-direction: row;
+        /* garante que ficam na mesma linha */
         justify-content: space-between;
+        align-items: center;
+        /* alinha verticalmente */
         width: 100%;
     }
 
@@ -123,6 +125,9 @@ body {
 
     .nav-center {
         width: 100%;
+        display: flex;
+        /* já devia estar no desktop */
+        flex-direction: column;
         gap: 10px;
     }
 
