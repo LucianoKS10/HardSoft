@@ -54,7 +54,7 @@ body {
     gap: 20px;
 }
 
-.navbar a {
+.links a {
     color: white;
     text-decoration: none;
     font-size: 16px;
@@ -63,12 +63,12 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar a:hover {
+.links a:hover {
     color: var(--ciano-tech);
 }
 
-/* LINHA ANIMADA DA NAVBAR*/
-.navbar a::after {
+/* LINHA ANIMADA */
+.links a::after {
     content: "";
     position: absolute;
     width: 0%;
@@ -86,17 +86,19 @@ body {
     transition: width 0.5s ease, opacity 0.5s ease;
 }
 
-.navbar a:hover::after {
+.links a:hover::after {
     width: 100%;
     opacity: 1;
 }
 
+
 @media (max-width: 768px) {
 
     .navbar {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 15px;
         padding: 15px;
+
     }
 
     .nav-center {
@@ -111,7 +113,7 @@ body {
 
     .login {
         width: 100%;
-        justify-content: center;
+        justify-content: end;
     }
 }
 
@@ -128,27 +130,72 @@ body {
     transform: scale(1.09);
 }
 
-/* LOGIN */
+/* BOTÂO DE LOGIN */
 .login {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-/* BOTÃO LOGIN */
 .login a {
-    background: var(--ciano-tech);
     color: black;
+    text-decoration: none;
+    font-size: 16px;
     font-weight: bold;
-    padding: 10px 18px;
+
+    background: linear-gradient(135deg, #00d4ff);
+    padding: 10px 20px;
     border-radius: 25px;
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.5),
+        0 0 10px rgba(0, 212, 255, 0.3);
+
+    transition: all 0.3s ease;
 }
+
+
+.login a:hover {
+    transform: translateY(-2px) scale(1.05);
+
+    background: linear-gradient(135deg, #00e0ff, #2563eb);
+
+    box-shadow: 0 0 10px var(--ciano-tech),
+        0 0 20px var(--ciano-tech),
+        0 0 30px rgba(0, 212, 255, 0.5);
+
+    color: black;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+
+    transition: all 0.3s ease;
+}
+
+.cart img {
+    width: 35px;
+    height: 35px;
+
+    filter: brightness(0) invert(1);
+}
+
+.cart img:hover {
+    transform: scale(1.2);
+
+    cursor: pointer;
+
+}
+
 
 /* FUNDO ESCURO */
 .modal {
-    display: flex;
+    display: none;
     position: fixed;
     z-index: 2000;
 
@@ -350,16 +397,6 @@ body {
     z-index: 999;
 }
 
-.result-item {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #eee;
-}
-
-.result-item:hover {
-    background: #f0f0f0;
-}
-
 @media (max-width: 500px) {
 
     #searchForm {
@@ -435,7 +472,7 @@ section {
 .components,
 .peripherals,
 .accessories,
-.pcs-notebooks {
+.devices {
     padding: 30px;
     background: var(--azul-principal);
     color: white;
@@ -485,6 +522,17 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
     transition: all 0.3s ease;
+}
+
+.product-card p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.product-card p:hover {
+    color: var(--ciano-tech);
+    transform: translateY(-2px);
+    font-weight: bold;
 }
 
 .product-card:hover {
