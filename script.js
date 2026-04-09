@@ -25,23 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchResults = document.getElementById("searchResults");
 
     // ===============================
-    // FUNÇÕES
+    // FUNÇÕES DO MODAL
     // ===============================
-
-    function resetModal() {
-        if (!loginForm || !registerForm || !forgotForm) return;
-
-        registerForm.style.display = "none";
-        loginForm.style.display = "flex";
-        forgotForm.style.display = "none";
-
-        if (title) title.textContent = "Login";
-    }
 
     function openModal() {
         if (!modal) return;
         modal.style.display = "flex";
-        resetModal();
+        showLogin();
     }
 
     function closeModal() {
@@ -49,26 +39,38 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "none";
     }
 
-    function normalize(text) {
-        return text
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+    function resetModal() {
+        // Esconde todos os formulários
+        loginForm.style.display = "none";
+        registerForm.style.display = "none";
+        forgotForm.style.display = "none";
+    }
+
+    function showLogin() {
+        resetModal();
+        loginForm.style.display = "block";
+        title.textContent = "Login";
+    }
+
+    function showRegister() {
+        resetModal();
+        registerForm.style.display = "block";
+        title.textContent = "Cadastro";
+    }
+
+    function showForgot() {
+        resetModal();
+        forgotForm.style.display = "block";
+        title.textContent = "Recuperar Senha";
     }
 
     // ===============================
-    // LOGIN (FUNCIONA EM TODAS AS PÁGINAS)
+    // EVENTOS MODAL
     // ===============================
 
     if (loginBtn) {
         loginBtn.addEventListener("click", (e) => {
             e.preventDefault();
-
-            if (!modal) {
-                console.warn("Modal não encontrado nessa página");
-                return;
-            }
-
             openModal();
         });
     }
@@ -83,15 +85,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // LINKS INTERNO DO MODAL
+    const irRegister = document.getElementById("irRegister");
+    const goForgot = document.getElementById("goForgot");
+    const goLogin = document.getElementById("goLogin");
+    const backLogin = document.getElementById("backLogin");
+
+    if (irRegister) irRegister.addEventListener("click", e => { e.preventDefault(); showRegister(); });
+    if (goForgot) goForgot.addEventListener("click", e => { e.preventDefault(); showForgot(); });
+    if (goLogin) goLogin.addEventListener("click", e => { e.preventDefault(); showLogin(); });
+    if (backLogin) backLogin.addEventListener("click", e => { e.preventDefault(); showLogin(); });
+
     // ===============================
     // HERO
     // ===============================
 
     if (heroBtn && bestSellersSection) {
         heroBtn.addEventListener("click", () => {
-            bestSellersSection.scrollIntoView({
-                behavior: "smooth"
-            });
+            bestSellersSection.scrollIntoView({ behavior: "smooth" });
         });
     }
 
@@ -101,16 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navbar) {
         window.addEventListener("scroll", () => {
-            navbar.style.background =
-                window.scrollY > 50
-                    ? "rgba(3, 36, 144, 0.95)"
-                    : "rgba(3, 36, 144, 0.8)";
+            navbar.style.background = window.scrollY > 50
+                ? "rgba(3, 36, 144, 0.95)"
+                : "rgba(3, 36, 144, 0.8)";
         });
     }
 
     // ===============================
     // SEARCH AUTO COMPLETE
     // ===============================
+
+    function normalize(text) {
+        return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
 
     if (searchInput && searchResults && productsDOM.length > 0) {
 
@@ -143,11 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
 
                     item.addEventListener("click", () => {
-                        product.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-
+                        product.scrollIntoView({ behavior: "smooth", block: "center" });
                         searchResults.style.display = "none";
                     });
 
@@ -168,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
 
             const query = searchInput.value.trim();
-
             if (!query) return;
 
             window.location.href = `search.html?q=${encodeURIComponent(query)}`;
