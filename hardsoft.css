@@ -91,29 +91,45 @@ body {
     opacity: 1;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 @media (max-width: 768px) {
 
     .navbar {
-        flex-direction: column-reverse;
-        gap: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
         padding: 15px;
+    }
 
+    /* 🔥 JOGA LOGIN + CARRINHO PRA CIMA */
+    .nav-right {
+        order: -1;
+        /* sobe pro topo */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* LOGO CENTRALIZADA */
+    .logo {
+        display: flex;
+        justify-content: center;
     }
 
     .nav-center {
         width: 100%;
+        gap: 10px;
     }
 
     .links {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-    }
-
-    .login {
-        width: 100%;
-        justify-content: end;
     }
 }
 

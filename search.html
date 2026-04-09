@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- NAVBAR (igual à principal) -->
+    <!-- NAVBAR -->
     <nav class="navbar">
 
         <div class="logo">
@@ -41,8 +41,15 @@
             </div>
         </div>
 
-        <div class="login">
-            <a href="#">Login</a>
+        <!-- DIREITA -->
+        <div class="nav-right">
+            <div class="cart">
+                <a href="#"><img src="img/carrinho-de-compras.png"></a>
+            </div>
+
+            <div class="login">
+                <a href="#">Login</a>
+            </div>
         </div>
 
     </nav>
@@ -62,6 +69,24 @@
 
     </section>
 
+    <!-- MODAL DE LOGIN (TEM QUE FICAR FORA DA NAVBAR) -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="loginTitle">Login</h2>
+            </div>
+
+            <div class="form login-form">
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <button>Entrar</button>
+            </div>
+
+        </div>
+    </div>
+
     <!-- RODAPÉ -->
     <footer class="footer">
 
@@ -74,7 +99,7 @@
             </div>
         </div>
 
-        <img src="img/logo.png" alt="Logo da HardSoft">
+        <img src="img/logo.png">
 
         <div class="footer-content">
             <div class="footer-section">
@@ -90,6 +115,8 @@
 
     </footer>
 
+    <!-- IMPORTANTE: MESMO SCRIPT DA INDEX -->
+    <script src="script.js"></script>
     <script src="search.js"></script>
 
 </body>
