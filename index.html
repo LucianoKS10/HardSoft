@@ -7,7 +7,9 @@
     <title>HardSoft</title>
 
     <link rel="icon" type="image/x-icon" href="img/icone2.png">
-    <link rel="stylesheet" href="hardsoft.css">
+    <link rel="stylesheet" href="css/hardsoft.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
@@ -17,7 +19,7 @@
     <nav class="navbar">
 
         <div class="logo">
-            <img src="img/logo.png" alt="Logo da HardSoft">
+            <img src="img/logo.png" alt="Logo da HardSoft" width="180" height="60">
         </div>
 
         <div class="nav-center">
@@ -31,11 +33,11 @@
             <!-- BARRA DE PESQUISA -->
             <div class="search">
                 <form id="searchForm">
-                    <input type="text" placeholder="Pesquisar produtos..." id="searchInput">
-                    <button type="submit" id="searchBtn">🔍</button>
+                    <input type="text" placeholder="Pesquisar produtos..." id="searchInput" autocomplete="off">
+                    <button type="submit" id="searchBtn" aria-label="Pesquisar">🔍</button>
                 </form>
 
-                <div id="searchResults"></div>
+                <div id="searchResults" role="listbox" aria-label="Resultados da pesquisa"></div>
                 <p id="noResults" style="display: none; color: white;">
                     Nenhum produto encontrado 😢
                 </p>
@@ -44,7 +46,9 @@
 
         <div class="nav-right">
             <div class="cart">
-                <a href="#"><img src="img/carrinho-de-compras.png" alt="Carrinho de Compras"></a>
+                <a href="#" aria-label="Ver carrinho de compras">
+                    <img src="img/carrinho-de-compras.png" alt="" width="35" height="35">
+                </a>
             </div>
 
             <div class="login">
@@ -52,226 +56,104 @@
             </div>
         </div>
 
-
-
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Promoções em Hardware 🔥</h1>
-        <p>Os melhores preços em computadores e componentes</p>
-        <button>Ver produtos</button>
-    </section>
+    <main>
 
-    <!-- MAIS VENDIDOS -->
-    <section class="best-sellers">
-        <div class="section-header">
-            <h2 class="section-title">Mais Vendidos</h2>
-            <a href="#" class="arrow">›</a>
-        </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTcy9UxU9SseOqF2WMWxrtrEFm8jXJWvT2upYCfQtJeBjIOEjN98vu3s_nQFOYhi8bvzkOBluybccRhD3LMBrYS1G8lgBcY-MMz2GfmBqEcQpYLR5CZIQFt"
-                    alt="Placa de Vídeo Pcyes AMD Radeon RX 550 4GB GDDR5">
-                <h3>Placa de Vídeo Pcyes AMD Radeon RX 550 4GB GDDR5</h3>
-                <p>R$ 476,99</p>
-                <button>Comprar</button>
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Promoções em Hardware 🔥</h1>
+            <p>Os melhores preços em computadores e componentes</p>
+            <button type="button">Ver produtos</button>
+        </section>
+
+        <!-- MAIS VENDIDOS -->
+        <section class="best-sellers">
+            <div class="section-header">
+                <h2 class="section-title">Mais Vendidos</h2>
+                <a href="search.html?category=best-sellers" class="arrow">›</a>
             </div>
+            <div class="products-grid" id="best-sellers"></div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQOOueMMRalwfNz9Dy7oPOKpFd4rCVeVw71JLF8jqM6PeyreCisTVoIp4aVfY6l0ThT2GdSPDBCiAfwa1J5KSewOsN1AJ-r3Sg9-vbLbtzGclkhaImVXtI"
-                    alt="Processador Intel i5 8400 4.0GHz 6/6 LGA 1151 OEM | Terabyte">
-                <h3>Processador Intel i5 8400 4.0GHz 6/6 LGA 1151 OEM | Terabyte</h3>
-                <p>R$ 559,99</p>
-                <button>Comprar</button>
+        <!-- COMPONENTES -->
+        <section class="components">
+            <div class="section-header">
+                <h2 class="section-title">Componentes</h2>
+                <a href="search.html?category=components" class="arrow">›</a>
             </div>
+            <div class="products-grid" id="components"></div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTywIKbRHZ4PvzBMj026ZBa2yQsjhKT5-PHbCHL9vjPrYp5UmBdEaU7DAvH9ovSyVFUPrZHCkLekyl8Ch55uNF7hLviN8hUyfWRxkFdAVA1xiIfh7xheiy5Gw"
-                    alt="Memória Ram Kingston Fury Beast Ddr4 8Gb 3733Mhz - Preto (Kf437c19bb/8)">
-                <h3>Memória Ram Kingston Fury Beast Ddr4 8Gb 3733Mhz - Preto (Kf437c19bb/8)</h3>
-                <p>R$192,95</p>
-                <button>Comprar</button>
+        <!-- PERIFÉRICOS -->
+        <section class="peripherals">
+            <div class="section-header">
+                <h2 class="section-title">Periféricos</h2>
+                <a href="search.html?category=peripherals" class="arrow">›</a>
             </div>
+            <div class="products-grid" id="peripherals"></div>
+        </section>
 
-
-        </div>
-    </section>
-
-    <!-- COMPONENTES -->
-    <section class="components">
-        <div class="section-header">
-            <h2 class="section-title">Componentes</h2>
-            <a href="#" class="arrow">›</a>
-        </div>
-        <div class="products-grid">
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3EGBeILI1EgX0ujul30O3KK0U01wY_-wZ4YvE0y4MLSDOrMFZSHhktdccmd93xpmO9U48SeEqKbfxUSus0saufC4fELWxNZV0JTSmSFFBgj9SYmbL6kiEyw"
-                        alt="RTX 5070">
-                    <h3>RTX 5070</h3>
-                    <p>R$ 4.504,99</p>
-                    <button>Comprar</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGBBUuayAH1jMdwHp3b3-eo3YYTL9D-ev-X7OKv-legn2txHfm0RTgJ8ThmsaQsbHQtO76WoEsUy5-rVdeC2R3BArXyJX42juoG15S"
-                        alt="Processador AMD Ryzen 7 7800X3D">
-                    <h3>Processador AMD Ryzen 7 7800X3D</h3>
-                    <p>R$ 2.289,99</p>
-                    <button>Comprar</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSfhS4lPxil7aEVvs2aRhOyuACYvRLXg5hD9-jRQoBV1pAPLCfzQ0MlO7G8UCDlSbH6_smepRKnJpoUNJsUl9jwy6rj2iaVHMk3TszwkTa16o-eIXD-LfMv"
-                        alt="Memória RAM XPG Lancer Blade 16GB RGB DDR5">
-                    <h3>Memória RAM XPG Lancer Blade 16GB RGB DDR5</h3>
-                    <p>R$ <del>1.580,90</del> 1.180,90</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTf5AtgRcTmAueD7ebb8mfIdBeBEKgluDw15HCc8G2Pjg6BGpVWCe2PUgP38bZNpHUiKp9-1IlCXmTeIQqnT-wexqNCfK6LXl2LUdFBPzCuW-rS6a8SwH2jSw"
-                        alt="MSI Placa-Mãe MAG B760 Tomahawk WIFI">
-                    <h3>MSI Placa-Mãe MAG B760 Tomahawk WIFI</h3>
-                    <p>R$1.869,00</p>
-                    <button>Comprar</button>
-                </div>
+        <!-- ACESSÓRIOS -->
+        <section class="accessories">
+            <div class="section-header">
+                <h2 class="section-title">Acessórios</h2>
+                <a href="search.html?category=accessories" class="arrow">›</a>
             </div>
-    </section>
+            <div class="products-grid" id="accessories"></div>
+        </section>
 
-    <!-- PERIFÉRICOS -->
-    <section class="peripherals">
-        <div class="section-header">
-            <h2 class="section-title">Periféricos</h2>
-            <a href="#" class="arrow">›</a>
-        </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="https://p4-ofp.static.pub/ShareResource/ww/visuals/Yoga-Pro-Gen-10/Gallery/-58401.png?width=1200&height=1200"
-                    alt="Monitor Lenovo Yoga Pro 27UD-10 26,5">
-                <h3>Monitor Lenovo Yoga Pro 27UD-10 26,5"</h3>
-                <p>R$7.199,99</p>
-                <button>Comprar</button>
+        <!-- DISPOSITIVOS -->
+        <section class="devices">
+            <div class="section-header">
+                <h2 class="section-title">Dispositivos</h2>
+                <a href="search.html?category=devices" class="arrow">›</a>
             </div>
-            <div class="product-card">
-                <img src="https://p4-ofp.static.pub//fes/cms/2025/09/04/2v2m9qm71iyae0pz463e3mfzzb222d344709.png?width=584&height=584"
-                    alt="Monitor ThinkVision S22e-19 de 21,5">
-                <h3>Monitor ThinkVision S22e-19 de 21,5" </h3>
-                <p>R$R$557,99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="https://p4-ofp.static.pub//fes/cms/2025/05/22/bbh4okj51q0s8dnrsp89vypi3l1nmz317151.png?width=584&height=584"
-                    alt="Mouse sem fio para jogos Lenovo Legion M600">
-                <h3>Mouse sem fio para jogos Lenovo Legion M600</h3>
-                <p>R$422,99</p>
-                <button>Comprar</button>
-            </div>
-        </div>
-    </section>
+            <div class="products-grid" id="devices"></div>
+        </section>
 
-    <!-- ACESSÓRIOS -->
-    <section class="accessories">
-        <div class="section-header">
-            <h2 class="section-title">Acessórios</h2>
-            <a href="#" class="arrow">›</a>
-        </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQY9f01XqbY3x9gqVXWyILYehRkXYEM4SU7bJAYCt4QYj7PGpeZopkIkp9MZ6-h7jAyo7sd5c5czdk54SR5WNtD4fN5OObcEfGlUZvubdbIjz-GHaJ-ugxh"
-                    alt="Controle Gamer Redragon Tophis G821">
-                <h3>Controle Gamer Redragon Tophis G821</h3>
-                <p>R$147,99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/41KqLLY1BPL._AC_SX522_.jpg"
-                    alt="Webcam 1080p Full HD Alta Resolução Computador">
-                <h3>Webcam 1080p Full HD Alta Resolução Computador</h3>
-                <p>R$48,99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="product-card">
-                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTLLt_QaY5iWrt86yqkIHCn4otwwZunYDDEHG78Q5EYTakMYR2OBYKX_C3CyTabNMhj2lmPIevIZcSiZEbZvsy82bXkHnca9Q"
-                    alt="Suporte para Notebook Com apoio para Celular Ergo lsa6">
-                <h3>Suporte para Notebook Com apoio para Celular Ergo lsa6</h3>
-                <p>R$89,90</p>
-                <button>Comprar</button>
-            </div>
-
-
-
-        </div>
-    </section>
-
-    <!-- DISPOSITIVOS    -->
-    <section class="devices">
-        <div class="section-header">
-            <h2 class="section-title">Dispositivos</h2>
-            <a href="#" class="arrow">›</a>
-        </div>
-        <div class="products-grid">
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSHUNL5szfVtJAgb7HXeplNdjUZ0kpbv-bdO9vnthPq8TeAIfZf9QHNGxEwheiGEAvmqxYtsOqnWqukyG-keGmiN9iM7n4zmw"
-                        alt="Samsung Galaxy S25 Ultra 5G 12GB RAM 256GB">
-                    <h3>Samsung Galaxy S25 Ultra 5G 12GB RAM 256GB</h3>
-                    <p>R$6.786,99</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRdF76Jnz9yCgUp9AuLrs3gMka8q4kTWr0aPpE0fPDBiaDvWsCzfr19IuyhZT-_cw06wfWzBsCWSxlAQn-Do1Y9zyNfetAM056PFuVs8X3qu-X792IVsN-s1g"
-                        alt="Tablet Samsung Galaxy Tab S10 Lite 128GB WiFi 8GB RAM">
-                    <h3>Tablet Samsung Galaxy Tab S10 Lite 128GB WiFi 8GB RAM</h3>
-                    <p>R$2.262,90</p>
-                    <button>Comprar</button>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- MODAL DE LOGIN -->
-    <div class="modal" id="loginModal">
+    <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
         <div class="modal-content">
 
             <!-- HEADER DO MODAL -->
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span class="close" role="button" aria-label="Fechar modal">&times;</span>
                 <h2 id="loginTitle">Login</h2>
             </div>
 
             <!-- LOGIN -->
             <div class="form login-form">
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Senha">
+                <input type="email" placeholder="Email" autocomplete="email">
+                <input type="password" placeholder="Senha" autocomplete="current-password">
                 <div class="login-links">
                     <a href="#" id="irRegister">Cadastrar-se</a>
                     <a href="#" id="goForgot">Esqueceu a senha?</a>
                 </div>
-                <button>Entrar</button>
+                <button type="button">Entrar</button>
             </div>
 
             <!-- CADASTRO -->
             <div class="form register-form" style="display: none;">
-                <input type="text" placeholder="Nome Completo">
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Senha">
-                <input type="password" placeholder="Confirmar Senha">
+                <input type="text" placeholder="Nome Completo" autocomplete="name">
+                <input type="email" placeholder="Email" autocomplete="email">
+                <input type="password" placeholder="Senha" autocomplete="new-password">
+                <input type="password" placeholder="Confirmar Senha" autocomplete="new-password">
                 <div class="login-links">
                     <a href="#" id="goLogin">Já tenho uma conta</a>
                 </div>
-                <button>Cadastrar</button>
+                <button type="button">Cadastrar</button>
             </div>
 
             <!-- ESQUECEU A SENHA -->
             <div class="form forgot-form" style="display: none;">
-                <input type="text" placeholder="Digite seu email">
+                <input type="email" placeholder="Digite seu email" autocomplete="email">
                 <div class="login-links">
                     <a href="#" id="backLogin">Voltar ao login</a>
                 </div>
-                <button>Recuperar senha</button>
+                <button type="button">Recuperar senha</button>
             </div>
 
         </div>
@@ -289,9 +171,7 @@
             </div>
         </div>
 
-
-
-        <img src="img/logo.png" alt="Logo da HardSoft, rodapé">
+        <img src="img/logo.png" alt="Logo da HardSoft" width="180" height="60">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Sobre a HardSoft</h3>
@@ -300,14 +180,17 @@
             </div>
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p>Email: contato@hardsoft.com</p>
+                <p>Email: <a href="mailto:contato@hardsoft.com" style="color: #cbd5f5;">contato@hardsoft.com</a></p>
             </div>
         </div>
         <p>&copy; 2026 Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="search.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/script.js"></script>
+
+
 
 </body>
 
